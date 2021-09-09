@@ -19,7 +19,7 @@ st.sidebar.subheader("Visualisation Settings")
 uploaded_file = st.sidebar.file_uploader(label='Upload file named "GlicemiaMisurazioni.csv.gz"', type=['gz'])
 
 if uploaded_file == None:
-    print("Upload file on the left pane")
+    st.write("Upload file on the left pane")
 
 else:
     file1 = gzip.open(uploaded_file, 'rt',  encoding='utf-16-le')
