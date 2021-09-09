@@ -103,3 +103,16 @@ else:
         st.write(fig2)
         st.write(fig4)
 
+    if st.button('Print HTML file'):
+        graph1 = mpld3.fig_to_html(fig1)
+        graph2 = mpld3.fig_to_html(fig2)
+        graph4 = mpld3.fig_to_html(fig4)
+        html = extract.to_html()
+        # write html to file
+        text_file = open(f"{uploaded_file.name.split('.')[0]}.html", "w")
+        text_file.write(graph1)
+        text_file.write(graph2)
+        text_file.write(graph4)
+        text_file.write(html)
+        text_file.close()
+
